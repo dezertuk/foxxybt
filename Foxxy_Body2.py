@@ -15,7 +15,6 @@ import asyncio
 import json
 
 BOT_PREFIX = ("!")
-TOKEN = ('Mzg2MjM1MzQ1OTU3NjgzMjAw.DQNNSg.rISWMWGkDltVUZK0HM5nHhup-lo')
 client = Bot(command_prefix = BOT_PREFIX)
 
 
