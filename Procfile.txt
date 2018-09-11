@@ -1,1 +1,1 @@
-worker: python Foxxy_Body2.py
+web: python Foxxy_Body2.py
