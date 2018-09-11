@@ -6,6 +6,7 @@ from ctypes.util import find_library
 import random
 from discord import opus
 import json
+import os
 
 
 import youtube_dl
@@ -72,6 +73,6 @@ if __name__ == '__main__':
 
 
     #Last part
-    client.run(TOKEN)
+    client.run(os.getenv('TOKEN')
 
 
