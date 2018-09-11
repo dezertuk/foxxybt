@@ -25,5 +25,4 @@ websockets
 wrapt
 youtube-dl
 opuslib
-heroku-opus
 
