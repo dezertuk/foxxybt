@@ -24,4 +24,4 @@ utils
 websockets
 wrapt
 youtube-dl
-
+heroku create --buildpack https://github.com/xrisk/heroku-opus.git
