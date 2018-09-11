@@ -1,1 +1,1 @@
-worker: python Foxxy_main2.py
+worker: python Foxxy_Body2.py
