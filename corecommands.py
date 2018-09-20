@@ -4,6 +4,10 @@ import random
 from random import choice
 import datetime
 import json
+import asyncio
+from discord.ext import commands
+from random import randint
+
 '''
 This is the main commands for the bot
 '''
@@ -12,7 +16,7 @@ class CoreCommands:
 
     def __init__(self, client):
         self.client = client
-    
+
     def is_num(self, s):
         try:
             int(s)
@@ -182,7 +186,8 @@ class CoreCommands:
         invite = await self.client.create_invite(context.message.server, max_uses=1, xkcd=True)
         await self.client.send_message(context.message.author, "Your invite URL is {}".format(invite.url))
         await self.client.say("*Check Your Dm's* :wink: ")
-        
+
+
     @commands.command(pass_context=True,
                       description='Rolls dice.\nExamples:\n100  Rolls 1-100.\n50-100  Rolls 50-100.\n3d6  Rolls 3 d6 dice and returns total.\nModifiers:\n! Hit success. 3d6!5 Counts number of rolls that are greater than 5.\nmod: Modifier. 3d6mod3 or 3d6mod-3. Adds 3 to the result.\n> Threshold. 100>30 returns success if roll is greater than or equal to 30.\n\nFormatting:\nMust be done in order.\nSingle die roll: 1-100mod2>30\nMultiple: 5d6!4mod-2>2')
     @asyncio.coroutine
@@ -267,7 +272,6 @@ class CoreCommands:
         except ValueError as err:
             # Display error message to channel
             yield from self.client.say(err)
-
 
 def setup(client):
     client.add_cog(CoreCommands(client))
